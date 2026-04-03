@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Order Success</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+
+background:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+url("{% static 'images/F23.jpg' %}");
+
+background-size:cover;
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.success-card{
+
+background:white;
+padding:40px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+width:350px;
+
+}
+
+.success-card h1{
+
+color:green;
+
+}
+
+.food-text{
+
+font-size:20px;
+margin:20px 0;
+
+}
+
+.price{
+
+color:red;
+font-weight:bold;
+
+}
+
+.back-btn{
+
+background:orange;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:8px;
+cursor:pointer;
+margin-top:20px;
+font-size:16px;
+
+}
+
+.back-btn:hover{
+
+background:#e66a00;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="success-card">
+
+<h1>Order Successful 🎉</h1>
+
+<p class="food-text">
+{{ food.name }} ordered successfully
+</p>
+
+<p class="price">
+Price : ₹{{ food.price }}
+</p>
+
+<a href="{% url 'home' %}">
+
+<button class="back-btn">
+
+Back to Menu
+
+</button>
+
+</a>
+
+</div>
+
+</body>
+
+</html>

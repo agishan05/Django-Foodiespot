@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Intro</title>
+<link rel="icon" href="{% static 'images/balanced-diet.png' %}">
+
+<style>
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:linear-gradient(135deg,#ff4500,#ff9966);
+color:white;
+flex-direction:column;
+}
+button{
+padding:15px;
+border-radius:20px;
+border:none;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>🍛 FOODIE SPOT 🍕</h1>
+<p>Welcome to the world of deliciousness!</p>
+
+<button onclick="go()">Start Now</button>
+
+<script>
+function go(){
+window.location.href="{% url 'home' %}";
+}
+</script>
+
+</body>
+</html>

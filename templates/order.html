@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Order</title>
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}?v=21">
+
+</head>
+
+<body>
+
+<div class="order-container">
+
+<div class="order-card">
+
+<h1>Order {{ food.name }}</h1>
+
+<form method="POST">
+
+{% csrf_token %}
+
+<input type="text" name="name" placeholder="Enter your name" required>
+
+<button type="submit">Confirm Order</button>
+
+</form>
+
+<a href="{% url 'home' %}">
+<button class="back-btn">Back to Menu</button>
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

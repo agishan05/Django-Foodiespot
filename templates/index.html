@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Foodie Spot</title>
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}?v=20">
+
+<link rel="icon" href="{% static 'images/balanced-diet.png' %}">
+
+</head>
+
+<body>
+
+<header>
+
+      <h1 class="logo">FOODIE SPOT 🍛</h1>
+
+<nav>
+
+<ul>
+
+      <li><a href="{% url 'home' %}">Home</a></li>
+
+      <li><a href="#Mpage">Menu</a></li>
+
+      <li><a href="#About">About</a></li>
+
+      <li><a href="#Contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section class="home">
+
+      <h2>Delicious Foods Available</h2>
+
+      <p class="tag">Eat Fresh • Eat Healthy • Eat Tasty</p>
+
+</section>
+
+      <h1 id="Mpage" class="menu-title">TOP MENU</h1>
+
+<div class="menu">
+
+{% for i in foods %}
+
+<div class="card">
+
+      <img src="{% static i.image %}" class="circle">
+
+<div class="food-info">
+
+<h3>{{ i.name }}</h3>
+
+      <p class="rup">₹{{ i.price }}</p>
+
+<a href="{% url 'order' i.id %}">
+
+<button class="order-btn">Order Now</button>
+
+</a>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+<section id="About" class="about-section">
+
+<h2>About Foodie Spot</h2>
+
+<p>
+Welcome to <b>Foodie Spot</b>, your destination for delicious, fresh, and high-quality food. We are passionate about serving tasty meals prepared with the finest ingredients while maintaining the highest standards of hygiene and food safety. Our menu offers a variety of popular dishes made by experienced chefs who focus on both taste and nutrition to give you a memorable dining experience. At Foodie Spot, customer satisfaction is our top priority, and we are committed to providing quality food, quick service, affordable prices, and a friendly atmosphere. We believe that good food brings people together, and our mission is to make every meal special, fresh, and enjoyable. Thank you for choosing Foodie Spot – Eat Fresh, Eat Healthy, Eat Tasty.
+</p>
+
+<img src="{% static 'images/res kitchen.jpg' %}" class="about-img">
+
+</section>
+
+<section id="Contact" class="contact-section">
+
+<h2>Contact Us</h2>
+
+<form>
+
+<input type="text" placeholder="Enter Name" required>
+
+<input type="email" placeholder="Enter Email" required>
+
+<textarea placeholder="Message"></textarea>
+
+<button type="submit">Send</button>
+
+</form>
+
+</section>
+
+<footer>
+
+<p>© 2026 Foodie Spot | Django Project</p>
+
+</footer>
+
+</body>
+
+</html>
